@@ -1,0 +1,41 @@
+# github.com/pa-m/optimize v0.0.0-20190612075243-15ee852a6d9a
+github.com/pa-m/optimize
+# github.com/pa-m/randomkit v0.0.0-20191001073902-db4fd80633df
+github.com/pa-m/randomkit
+# github.com/pa-m/sklearn v0.0.0-20200119102949-f6ac8940b329
+## explicit
+github.com/pa-m/sklearn/base
+github.com/pa-m/sklearn/metrics
+github.com/pa-m/sklearn/neighbors
+github.com/pa-m/sklearn/preprocessing
+# golang.org/x/exp v0.0.0-20191129062945-2f5052295587
+golang.org/x/exp/rand
+# golang.org/x/tools v0.0.0-20191204193430-660eba4da30b
+golang.org/x/tools/container/intsets
+# gonum.org/v1/gonum v0.7.0
+## explicit
+gonum.org/v1/gonum/blas
+gonum.org/v1/gonum/blas/blas64
+gonum.org/v1/gonum/blas/cblas128
+gonum.org/v1/gonum/blas/gonum
+gonum.org/v1/gonum/floats
+gonum.org/v1/gonum/internal/asm/c128
+gonum.org/v1/gonum/internal/asm/c64
+gonum.org/v1/gonum/internal/asm/f32
+gonum.org/v1/gonum/internal/asm/f64
+gonum.org/v1/gonum/internal/cmplx64
+gonum.org/v1/gonum/internal/math32
+gonum.org/v1/gonum/lapack
+gonum.org/v1/gonum/lapack/gonum
+gonum.org/v1/gonum/lapack/lapack64
+gonum.org/v1/gonum/mat
+gonum.org/v1/gonum/mathext
+gonum.org/v1/gonum/mathext/internal/amos
+gonum.org/v1/gonum/mathext/internal/cephes
+gonum.org/v1/gonum/mathext/internal/gonum
+gonum.org/v1/gonum/optimize
+gonum.org/v1/gonum/spatial/r1
+gonum.org/v1/gonum/stat
+gonum.org/v1/gonum/stat/combin
+gonum.org/v1/gonum/stat/distmv
+gonum.org/v1/gonum/stat/distuv

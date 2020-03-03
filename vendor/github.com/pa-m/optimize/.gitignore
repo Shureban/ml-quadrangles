@@ -1,0 +1,6 @@
+.vscode
+.idea
+.vscode
+*.bak
+*.test
+_*.sh

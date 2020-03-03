@@ -1,0 +1,6 @@
+.vscode
+*.test
+*.debug
+cover.out
+coverage.txt
+/.idea
