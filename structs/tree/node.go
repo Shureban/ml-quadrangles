@@ -14,7 +14,7 @@ func NewNodeList(list List, deep int, maxDeep int) (nodes NodeList) {
 	for key, coordinate := range list {
 		slice := list[key+1:]
 
-		// Добавляем [0:key+1] итерируемого списка в конец
+		// Добавляем [0:key] итерируемого списка в конец
 		// Чтобы получить все возможные варианты комбинаций координат
 		if tail := list[:key]; len(tail) != 0 {
 			slice = append(slice, tail...)

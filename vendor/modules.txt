@@ -1,9 +1,10 @@
+# github.com/joho/godotenv v1.3.0
+github.com/joho/godotenv
 # github.com/pa-m/optimize v0.0.0-20190612075243-15ee852a6d9a
 github.com/pa-m/optimize
 # github.com/pa-m/randomkit v0.0.0-20191001073902-db4fd80633df
 github.com/pa-m/randomkit
 # github.com/pa-m/sklearn v0.0.0-20200119102949-f6ac8940b329
-## explicit
 github.com/pa-m/sklearn/base
 github.com/pa-m/sklearn/metrics
 github.com/pa-m/sklearn/neighbors
@@ -13,7 +14,6 @@ golang.org/x/exp/rand
 # golang.org/x/tools v0.0.0-20191204193430-660eba4da30b
 golang.org/x/tools/container/intsets
 # gonum.org/v1/gonum v0.7.0
-## explicit
 gonum.org/v1/gonum/blas
 gonum.org/v1/gonum/blas/blas64
 gonum.org/v1/gonum/blas/cblas128

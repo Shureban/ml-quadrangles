@@ -26,7 +26,7 @@ func Quadrangles(list []*Quadrangle) (result []*Quadrangle) {
 			uniqMap[key] = q
 		}
 	}
-	
+
 	for _, q := range uniqMap {
 		result = append(result, q)
 	}

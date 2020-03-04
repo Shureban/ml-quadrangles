@@ -35,14 +35,20 @@ func init() {
 }
 
 // Возвращает наиболее вероятный класс
-func PredictQuadrangle(q *geometry.Quadrangle) int {
-	data := quadrangleAnalyseDataset(q)
-	y    := mat.NewDense(1, 1, nil)
-	X    := mat.NewDense(1, AnalyseParamsCount, data)
+func predict(data []float64) int {
+	y := mat.NewDense(1, 1, nil)
+	X := mat.NewDense(1, AnalyseParamsCount, data)
 
 	KNNClassifier.Predict(X, y)
 
 	return int(y.RawRowView(0)[0])
+}
+
+// Возвращает наиболее вероятный класс четырехугольника
+func PredictQuadrangle(q *geometry.Quadrangle) int {
+	data := quadrangleAnalyseDataset(q)
+
+	return predict(data)
 }
 
 // Возвращает набор параметров для анализа четырехугольника
@@ -54,20 +60,20 @@ func quadrangleAnalyseDataset(q *geometry.Quadrangle) []float64 {
 		converter.BoolToFloat64(q.LenCD == q.LenAD),
 		converter.BoolToFloat64(q.LenAB == q.LenCD),
 		converter.BoolToFloat64(q.LenBC == q.LenAD),
-		converter.BoolToFloat64(floats.Round(q.DegreeABC, 0) == 90),
-		converter.BoolToFloat64(floats.Round(q.DegreeBCD, 0) == 90),
-		converter.BoolToFloat64(floats.Round(q.DegreeCDA, 0) == 90),
-		converter.BoolToFloat64(floats.Round(q.DegreeDAB, 0) == 90),
-		converter.BoolToFloat64(floats.Round(q.DegreeABC, 0) > 0),
-		converter.BoolToFloat64(floats.Round(q.DegreeBCD, 0) > 0),
-		converter.BoolToFloat64(floats.Round(q.DegreeCDA, 0) > 0),
-		converter.BoolToFloat64(floats.Round(q.DegreeDAB, 0) > 0),
+		converter.BoolToFloat64(floats.Round(q.DegreeABC, 4) == 90),
+		converter.BoolToFloat64(floats.Round(q.DegreeBCD, 4) == 90),
+		converter.BoolToFloat64(floats.Round(q.DegreeCDA, 4) == 90),
+		converter.BoolToFloat64(floats.Round(q.DegreeDAB, 4) == 90),
+		converter.BoolToFloat64(floats.Round(q.DegreeABC, 4) > 0),
+		converter.BoolToFloat64(floats.Round(q.DegreeBCD, 4) > 0),
+		converter.BoolToFloat64(floats.Round(q.DegreeCDA, 4) > 0),
+		converter.BoolToFloat64(floats.Round(q.DegreeDAB, 4) > 0),
 		converter.BoolToFloat64(q.DiagonalAC == q.DiagonalBD),
 		converter.BoolToFloat64(q.TriangleABC.Hypotenuse == q.TriangleCDA.Hypotenuse),
 		converter.BoolToFloat64(q.TriangleABC.LegAB == q.TriangleCDA.LegAB),
-		converter.BoolToFloat64(floats.Round(q.TriangleABC.DegreeBCA, 0) == 45),
-		converter.BoolToFloat64(floats.Round(q.TriangleABC.DegreeCAB, 0) == 45),
-		converter.BoolToFloat64(floats.Round(q.TriangleCDA.DegreeBCA, 0) == 45),
-		converter.BoolToFloat64(floats.Round(q.TriangleCDA.DegreeCAB, 0) == 45),
+		converter.BoolToFloat64(floats.Round(q.TriangleABC.DegreeBCA, 4) == 45),
+		converter.BoolToFloat64(floats.Round(q.TriangleABC.DegreeCAB, 4) == 45),
+		converter.BoolToFloat64(floats.Round(q.TriangleCDA.DegreeBCA, 4) == 45),
+		converter.BoolToFloat64(floats.Round(q.TriangleCDA.DegreeCAB, 4) == 45),
 	}
 }
